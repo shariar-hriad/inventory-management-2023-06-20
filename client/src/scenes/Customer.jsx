@@ -9,7 +9,7 @@ import Heading from '../components/common/Heading'
 import Loading from '../components/common/Loading'
 import Wrapper from '../components/layout/Wrapper'
 import { postCustomer } from '../services'
-import { useGetCustomerQuery } from '../store/api/api'
+import { useGetCustomerQuery } from '../store/api'
 import { getAllCustomer } from '../store/features/customer/customerSlice'
 
 const Customer = () => {
@@ -21,8 +21,8 @@ const Customer = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getAllCustomer(data?.customer))
-    }, [data?.customer, dispatch])
+        dispatch(getAllCustomer(data))
+    }, [data, dispatch])
 
     const handlePostCustomer = async (event) => {
         event.preventDefault()
@@ -31,7 +31,6 @@ const Customer = () => {
         const address = addressRef.current.value
 
         const newCustomer = await postCustomer(name, phone, address)
-        dispatch()
         toast.success('Customer created successfully')
     }
 

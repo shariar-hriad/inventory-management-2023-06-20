@@ -11,7 +11,7 @@ import Loading from '../components/common/Loading'
 import FlexBetween from '../components/layout/FlexBetween'
 import Wrapper from '../components/layout/Wrapper'
 import { postBrand, removeBrand } from '../services'
-import { useGetBrandQuery } from '../store/api/api'
+import { useGetBrandQuery } from '../store/api'
 import { createBrand, deleteBrand, getBrand } from '../store/features/brand/brandSlice'
 import { showModal } from '../store/features/modal/modalSlice'
 

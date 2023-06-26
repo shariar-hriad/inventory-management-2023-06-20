@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import storeApi from './api/api'
+import storeApi from './api'
 import brandReducer from './features/brand/brandSlice'
 import customerReducer from './features/customer/customerSlice'
 

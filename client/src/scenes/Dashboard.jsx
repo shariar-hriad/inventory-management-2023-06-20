@@ -1,22 +1,11 @@
 import PropTypes from 'prop-types'
-import { useEffect, useState } from 'react'
 import { FiUser } from 'react-icons/fi'
 import dash1 from '../assets/dash1.svg'
 import Wrapper from '../components/layout/Wrapper'
+import { useGetLengthOfCustomerQuery } from '../store/api'
 
 const Dashboard = () => {
-    const [totalCustomer, setTotalCustomer] = useState(null)
-
-    useEffect(() => {
-        const fetchCustomerLength = async () => {
-            const response = await fetch('http://localhost:5000/api/v1/customer/total')
-            const data = await response.json()
-
-            setTotalCustomer(data.total)
-        }
-
-        fetchCustomerLength()
-    }, [])
+    const { data } = useGetLengthOfCustomerQuery()
 
     return (
         <Wrapper>
@@ -27,7 +16,7 @@ const Dashboard = () => {
                 <DashWidget img={dash1} price={40000} description='Total Sale Amount' />
                 <DashCount className='bg-[#ff9f43]' icon={FiUser} total={100} title='Total Products' />
                 <DashCount className='bg-[#50c8ad]' icon={FiUser} total={100} title='Suppliers' />
-                <DashCount className='bg-[#1B2850]' icon={FiUser} total={totalCustomer} title='Customers' />
+                <DashCount className='bg-[#1B2850]' icon={FiUser} total={data} title='Customers' />
                 <DashCount className='bg-[#28C76F]' icon={FiUser} total={100} title='Suppliers' />
             </div>
         </Wrapper>
