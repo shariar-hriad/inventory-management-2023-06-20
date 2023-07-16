@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,15 +6,18 @@
 
 @layer base {
     body {
-        @apply bg-[#fafbfe] font-nunito;
+        @apply h-screen bg-[#fafbfe] font-hind;
     }
     a {
-        @apply w-full;
+        @apply inline-block;
     }
 }
 
 @layer components {
     .asc_sorting {
         @apply relative;
+    }
+    .primary-btn {
+        @apply rounded-md border-transparent bg-[#FE9F43] px-5 py-2 font-bold uppercase text-white transition-all hover:bg-[#FE9F43]/90 hover:shadow-md;
     }
 }

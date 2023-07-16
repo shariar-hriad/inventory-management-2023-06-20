@@ -1,6 +1,6 @@
 import Heading from '../components/common/Heading'
+import Wrapper from '../components/common/Wrapper'
 import ProductForm from '../components/form/ProductForm'
-import Wrapper from '../components/layout/Wrapper'
 
 const AddProduct = () => {
     return (

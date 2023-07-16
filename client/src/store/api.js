@@ -5,10 +5,10 @@ const api = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: 'http://localhost:9000/api/v1/',
     }),
-    tagTypes: ['Brand', 'Customer', 'Total_Customer'],
+    tagTypes: ['Brand', 'Customer', 'Total_Customer', 'All_Product'],
     endpoints: (build) => ({
-        getBrand: build.query({
-            query: () => 'brand/getBrand',
+        getBrands: build.query({
+            query: () => 'brand/getBrands',
             providesTags: ['Brand'],
         }),
         getCustomer: build.query({
@@ -19,8 +19,12 @@ const api = createApi({
             query: () => 'customer/total',
             providesTags: ['Total_Customer'],
         }),
+        getAllProduct: build.query({
+            query: () => 'product/all',
+            providesTags: ['All_Product'],
+        }),
     }),
 })
 
-export const { useGetBrandQuery, useGetCustomerQuery, useGetLengthOfCustomerQuery } = api
+export const { useGetBrandsQuery, useGetCustomerQuery, useGetLengthOfCustomerQuery, useGetAllProductQuery } = api
 export default api

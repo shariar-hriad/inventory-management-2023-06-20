@@ -6,10 +6,10 @@ export default {
         extend: {
             fontFamily: {
                 nunito: ['Nunito', 'sans-serif'],
+                hind: ['Hind Siliguri', 'sans-serif'],
             },
             colors: {
-                linkHover: '#fff7f0',
-                linkText: '#fe9f8c',
+                primary: '#FE9F43',
             },
         },
     },
