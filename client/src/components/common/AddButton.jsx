@@ -1,10 +1,13 @@
-import PropTypes from 'prop-types'
 import { AiOutlinePlus } from 'react-icons/ai'
+import { twMerge } from 'tailwind-merge'
 
-const AddButton = ({ title = 'Add Button', ...rest }) => {
+const AddButton = ({ title = 'Add Button', className, ...rest }) => {
     return (
         <button
-            className='flex items-center gap-4 rounded-md bg-[#FE9F43] px-5 py-2 text-base font-bold text-white'
+            className={twMerge(
+                'flex items-center gap-4 rounded-md bg-[#FE9F43] px-5 py-2 text-base font-bold text-white',
+                className
+            )}
             type='button'
             {...rest}
         >
@@ -15,7 +18,3 @@ const AddButton = ({ title = 'Add Button', ...rest }) => {
 }
 
 export default AddButton
-
-AddButton.propTypes = {
-    title: PropTypes.string,
-}

@@ -1,24 +1,28 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    customer: [],
+    customers: [],
+    customersLenght: 0,
 }
 
 export const customerSlice = createSlice({
-    name: 'customer',
+    name: 'customers',
     initialState,
     reducers: {
         getAllCustomer: (state, action) => {
-            state.customer = action.payload
+            state.customers = action.payload
         },
         createCustomer: (state, action) => {
-            state.customer = [...state.customer, action.payload]
+            state.customers = [...state.customers, action.payload]
         },
         deleteCustomer: (state, action) => {
-            state.customer = state.customer.filter((item) => item._id !== action.payload)
+            state.customers = state.customers.filter((item) => item._id !== action.payload)
+        },
+        setCustomersLenght: (state, action) => {
+            state.customersLenght = action.payload
         },
     },
 })
 
-export const { getAllCustomer, createCustomer, deleteCustomer } = customerSlice.actions
+export const { getAllCustomer, createCustomer, deleteCustomer, setCustomersLenght } = customerSlice.actions
 export default customerSlice.reducer

@@ -1,3 +1,4 @@
+export { default as AddCustomer } from './AddCustomer.jsx'
 export { default as AddProduct } from './AddProduct.jsx'
 export { default as BrandList } from './BrandList.jsx'
 export { default as Cart } from './Cart.jsx'

@@ -2,6 +2,7 @@ import { Toaster } from 'react-hot-toast'
 import { Route, Routes } from 'react-router-dom'
 import Layout from './components/layout/Default'
 import {
+    AddCustomer,
     AddProduct,
     BrandList,
     Cart,
@@ -31,6 +32,7 @@ function App() {
                     <Route path='category' element={<CategoryList />} />
                     <Route path='brands' element={<BrandList />} />
                     <Route path='customers' element={<Customer />} />
+                    <Route path='add-customer' element={<AddCustomer />} />
                     <Route path='sales' element={<Sales />} />
                     <Route path='purchased' element={<Purchased />} />
                     <Route path='cash-memo' element={<CashMemo />} />

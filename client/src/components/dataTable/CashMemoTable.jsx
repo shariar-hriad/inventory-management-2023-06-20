@@ -1,5 +1,3 @@
-import { AiFillDelete } from 'react-icons/ai'
-import { FiEdit } from 'react-icons/fi'
 import CheckBox from '../common/CheckBox'
 
 const CashMemoTable = () => {
@@ -37,7 +35,7 @@ const CashMemoTable = () => {
                     </thead>
 
                     <tbody>
-                        <tr className='border-b bg-white hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600'>
+                        {/* <tr className='border-b bg-white hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600'>
                             <td className='w-4 p-4'>
                                 <CheckBox />
                             </td>
@@ -96,15 +94,15 @@ const CashMemoTable = () => {
                                     </button>
                                 </div>
                             </td>
-                        </tr>
+                        </tr> */}
 
-                        {/* <tr className='bg-gray-50'>
-                                <td colSpan={3}>
-                                    <div className='flex h-[150px] items-center justify-center'>
-                                        <p className='m-0 text-xl font-medium'>No Brand is created!</p>
-                                    </div>
-                                </td>
-                            </tr> */}
+                        <tr className='bg-gray-50'>
+                            <td colSpan={3}>
+                                <div className='flex h-[150px] items-center justify-center'>
+                                    <p className='m-0 text-xl font-medium'>No Brand is created!</p>
+                                </div>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

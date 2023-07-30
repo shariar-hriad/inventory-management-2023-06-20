@@ -8,9 +8,9 @@ const Products = () => {
     return (
         <Wrapper>
             <FlexBetween>
-                <Heading title={'Product List'} subtitle={'Manage your Products'} />
-                <Link to='/admin/add-product' className='primary-btn'>
-                    Add New Product
+                <Heading title='প্রডাক্টের তালিকা' subtitle='প্রডাক্টের তালিকা মেনেজ করুন' />
+                <Link to='/admin/add-product' className='primary-btn py-3 text-lg tracking-wider shadow-md'>
+                    নতুন প্রডাক্ট যোগ করুন
                 </Link>
             </FlexBetween>
 

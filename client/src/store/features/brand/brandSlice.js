@@ -1,24 +1,28 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    brand: [],
+    brands: [],
+    brandsLenght: 0,
 }
 
 const brandSlice = createSlice({
     name: 'brand',
     initialState,
     reducers: {
-        getBrand: (state, action) => {
-            state.brand = action.payload
+        setBrandsLength: (state, action) => {
+            state.brandsLenght = action.payload
+        },
+        getBrands: (state, action) => {
+            state.brands = action.payload
         },
         createBrand: (state, action) => {
-            state.brand = [...state.brand, action.payload]
+            state.brands = [...state.brands, action.payload]
         },
         deleteBrand: (state, action) => {
-            state.brand = state.brand.filter((item) => item._id !== action.payload)
+            state.brands = state.brands.filter((item) => item._id !== action.payload)
         },
     },
 })
 
-export const { getBrand, createBrand, deleteBrand } = brandSlice.actions
+export const { setBrandsLength, getBrands, createBrand, deleteBrand } = brandSlice.actions
 export default brandSlice.reducer

@@ -14,9 +14,9 @@ const initialValues = {
 }
 
 const validationSchema = object({
-    customerName: string().required('Customer Name must be provided'),
-    phoneNumber: number().required('Phone Number must be provided'),
-    customerAddress: string().required('Customer Address must be provid'),
+    customerName: string().required('অবশ্যই কাস্টমারের নাম দিতে হবে'),
+    phoneNumber: number().required('অবশ্যই কাস্টমারের নম্বর দিতে হবে'),
+    customerAddress: string().required('অবশ্যই কাস্টমারের ঠিকানা দিতে হবে'),
 })
 
 const CustomerForm = () => {
@@ -39,11 +39,11 @@ const CustomerForm = () => {
         <Formik initialValues={initialValues} validationSchema={validationSchema} validateOnBlur onSubmit={onSubmit}>
             <Form>
                 <div className='grid gap-3 md:grid-cols-3'>
-                    <Input name='customerName' type='text' label='Customer Name' />
-                    <Input name='phoneNumber' type='number' label='Phone Number' />
-                    <Input as='textarea' name='customerAddress' label='Customer Address' />
+                    <Input name='customerName' type='text' label='কাস্টমারের নাম' />
+                    <Input name='phoneNumber' type='text' label='কাস্টমারের নম্বর' />
+                    <Input as='textarea' name='customerAddress' label='কাস্টমারের ঠিকানা' />
+                    <Button className='tracking-wider' title='কাস্টমার যােগ করুন' />
                 </div>
-                <Button title='Save Customer' />
             </Form>
         </Formik>
     )

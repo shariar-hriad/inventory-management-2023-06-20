@@ -8,11 +8,9 @@ import BrandForm from '../components/form/BrandForm'
 const BrandList = () => {
     return (
         <Wrapper>
-            <Heading title={'Brand List'} subtitle={'Manage your Brand'} />
+            <Heading title='ব্রান্ডের তালিকা' subtitle='আপনার ব্রান্ডের তালিকা মেনেজ করুন' />
 
             <div className='mb-5 rounded-md border bg-white p-5'>
-                <h3 className='mb-5 text-2xl font-bold'>Add New Brand</h3>
-
                 {/* add brand form */}
                 <BrandForm />
             </div>

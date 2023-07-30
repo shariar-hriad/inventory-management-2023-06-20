@@ -1,8 +1,10 @@
-import { Field, Form, Formik } from 'formik'
+import { Form, Formik } from 'formik'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { number, object, string } from 'yup'
-import { useGetBrandsQuery } from '../../store/api'
+import { useGetBrandsQuery, useGetCategoryQuery } from '../../store/api'
+import { getBrands } from '../../store/features/brand/brandSlice'
 import Button from '../common/Button'
-import CustomError from '../common/CustomError'
 import Input from '../common/Input'
 import Select from '../common/Select'
 
@@ -26,7 +28,18 @@ const validationSchema = object({
 })
 
 const ProductForm = () => {
-    const { data } = useGetBrandsQuery()
+    const dispatch = useDispatch()
+
+    const brands = useSelector((state) => state.brands.brands)
+    console.log('brands :', brands)
+
+    const { data: brandsQuery, isBrandsLoading } = useGetBrandsQuery()
+    const { data: categoryQuery, isCategoryLoading } = useGetCategoryQuery()
+    console.log('category :', categoryQuery)
+
+    useEffect(() => {
+        if (!isBrandsLoading) dispatch(getBrands(brandsQuery?.brands))
+    }, [brandsQuery?.brands, dispatch, isBrandsLoading])
 
     return (
         <Formik
@@ -38,15 +51,8 @@ const ProductForm = () => {
                 <Form>
                     <div className='grid grid-cols-1 gap-3 lg:grid-cols-4'>
                         <Input type='text' name='productName' label='Product Name' />
-                        <div className='flex flex-col space-y-2'>
-                            <label htmlFor='productCategory'>Category</label>
-                            <Field as='select' className='rounded-md border px-3 py-2' name='productCategory'>
-                                <option value=''>Choose Category</option>
-                                <option value='computer'>Computer</option>
-                            </Field>
-                            <CustomError name='productCategory' />
-                        </div>
-                        <Select name='productBrand' label='Brand' options={data?.brand} />
+                        <Select name='productCategory' label='প্রােডাক্টের কেটাগরি' options={categoryQuery} />
+                        <Select name='productBrand' label='Brand' options={brands} />
                         <Input type='number' name='productSku' label='SKU' />
                         <Input type='number' name='productQuantity' label='Quantity' />
                         <Input type='number' name='productPrice' label='Price' />

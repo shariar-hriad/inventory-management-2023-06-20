@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types'
-
 const Wrapper = ({ children }) => {
     return (
         <div className='m-5 bg-white'>
@@ -9,7 +7,3 @@ const Wrapper = ({ children }) => {
 }
 
 export default Wrapper
-
-Wrapper.propTypes = {
-    children: PropTypes.node,
-}

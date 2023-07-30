@@ -8,7 +8,7 @@ const Layout = () => {
         <>
             <Header />
             <Sidebar />
-            <main className='ml-[260px] pt-[60px]'>
+            <main className='pt-[60px] md:ml-[260px]'>
                 <Outlet />
             </main>
         </>

@@ -17,17 +17,17 @@ const Header = () => {
                 </button>
             </div>
 
-            <Link to='/admin/cart' className='flex items-center gap-4'>
+            <div className='flex items-center gap-4'>
                 <div className='flex h-[40px] w-[40px] items-center justify-center rounded-full bg-gray-200 ring'>
                     <FaUserCircle fontSize={30} />
                 </div>
-                <div className='relative cursor-pointer'>
+                <Link to='/admin/cart' className='relative cursor-pointer'>
                     <BsCart4 className='text-gray-500' fontSize={30} />
                     <span className='absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-primary font-medium'>
                         5
                     </span>
-                </div>
-            </Link>
+                </Link>
+            </div>
         </header>
     )
 }
